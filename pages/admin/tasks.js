@@ -18,7 +18,7 @@ const Users = () => {
   // Fetch tasks when the component loads
   const fetchTasks = async () => {
     try {
-      const response = await axiosInstance.get(`${process.env.NEXT_PUBLIC_API_URL}/tasks`);
+      const response = await axiosInstance.get(`https://tsm.fayisnambiyath.in/api/tasks`);
       setTasks(response.data);
       console.log(response.data);
       
@@ -40,7 +40,7 @@ const Users = () => {
       if (result.isConfirmed) {
         try {
           const response = await axiosInstance.delete(
-            `${process.env.NEXT_PUBLIC_API_URL}/tasks/${taskId}`
+            `https://tsm.fayisnambiyath.in/api/tasks/${taskId}`
           );
 
           if (response.status === 204) {
@@ -65,7 +65,7 @@ const Users = () => {
 
   const handleAddTask = async (task) => {
     try {
-      const response = await axiosInstance.post(`${process.env.NEXT_PUBLIC_API_URL}/tasks/`, task, {
+      const response = await axiosInstance.post(`https://tsm.fayisnambiyath.in/api/tasks/`, task, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -83,7 +83,7 @@ const Users = () => {
   const handleEditTask = async (updatedTask) => {
     try {
       const response = await axiosInstance.put(
-        `${process.env.NEXT_PUBLIC_API_URL}/tasks/${updatedTask._id}`,
+        `https://tsm.fayisnambiyath.in/api/tasks/${updatedTask._id}`,
         updatedTask,
         {
           headers: { "Content-Type": "application/json" },

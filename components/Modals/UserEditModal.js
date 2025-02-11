@@ -11,11 +11,11 @@ const UserEditModal = ({ userId, isOpen, onClose, onUpdate }) => {
     if (!userId) return;
 
     const fetchUser = async () => {
-      console.log("API URL:", `${process.env.NEXT_PUBLIC_API_URL}/admin/users/${userId}`);
+      console.log("API URL:", `https://tsm.fayisnambiyath.in/api/admin/users/${userId}`);
 
       setLoading(true);
       try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/users/${userId}`);
+        const res = await axios.get(`https://tsm.fayisnambiyath.in/api/admin/users/${userId}`);
         console.log("Fetched user data:", res.data); // Debug log
         setUser({
           name: res.data.name,
@@ -41,7 +41,7 @@ const UserEditModal = ({ userId, isOpen, onClose, onUpdate }) => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await axiosInstance.put(`${process.env.NEXT_PUBLIC_API_URL}/admin/users/${userId}`, user);
+      await axiosInstance.put(`https://tsm.fayisnambiyath.in/api/admin/users/${userId}`, user);
       onUpdate(); // Refresh user list
       onClose(); // Close modal
     } catch (error) {

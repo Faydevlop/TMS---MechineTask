@@ -17,7 +17,7 @@ const Dashboard = () => {
 
     const fetchTasks = async () => {
       try {
-        const response = await axiosInstance.get(`${process.env.NEXT_PUBLIC_API_URL}/tasks/byuser/${userId}`);
+        const response = await axiosInstance.get(`https://tsm.fayisnambiyath.in/api/tasks/byuser/${userId}`);
         const tasks = response.data; 
 
         // Categorizing tasks based on their status

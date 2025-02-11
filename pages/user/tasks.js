@@ -41,7 +41,7 @@ const Tasks = () => {
       if (result.isConfirmed) {
         try {
           const response = await axiosInstance.delete(
-            `${process.env.NEXT_PUBLIC_API_URL}/tasks/${taskId}`
+            `https://tsm.fayisnambiyath.in/api/tasks/${taskId}`
           );
 
           if (response.status === 204) {
@@ -62,7 +62,7 @@ const Tasks = () => {
 
   const handleAddTask = async (task) => {
     try {
-      const response = await axiosInstance.post(`${process.env.NEXT_PUBLIC_API_URL}/tasks/`, task, {
+      const response = await axiosInstance.post(`https://tsm.fayisnambiyath.in/api/tasks/`, task, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -80,7 +80,7 @@ const Tasks = () => {
   const fetchTasks = async () => {
     try {
       const res = await axiosInstance.get(
-        `${process.env.NEXT_PUBLIC_API_URL}/tasks/byuser/${userId}`
+        `https://tsm.fayisnambiyath.in/api/tasks/byuser/${userId}`
       );
       setTasks(res.data);
     } catch (err) {
@@ -101,7 +101,7 @@ const Tasks = () => {
   const handleEditTask = async (updatedTask) => {
     try {
       const response = await axios.put(
-        `${process.env.NEXT_PUBLIC_API_URL}/tasks/${updatedTask._id}`,
+        `https://tsm.fayisnambiyath.in/api/tasks/${updatedTask._id}`,
         updatedTask,
         {
           headers: { "Content-Type": "application/json" },

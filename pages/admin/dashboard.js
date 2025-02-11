@@ -73,7 +73,7 @@ const dashboard = ({data}) => {
 // Fetch data with SSR
 export async function getServerSideProps() {
     try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/dashboard`);
+      const response = await axios.get(`https://tsm.fayisnambiyath.in/api/admin/dashboard`);
       console.log("API Response:", response.data);
   
       return {

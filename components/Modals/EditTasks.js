@@ -15,7 +15,7 @@ const EditTaskModal = ({ isOpen, onClose, onSave, task }) => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axiosInstance.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/users`);
+      const response = await axiosInstance.get(`https://tsm.fayisnambiyath.in/api/admin/users`);
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -33,7 +33,7 @@ const EditTaskModal = ({ isOpen, onClose, onSave, task }) => {
     e.preventDefault();
     try {
       const response = await axiosInstance.put(
-        `${process.env.NEXT_PUBLIC_API_URL}/tasks/${editedTask._id}`,
+        `https://tsm.fayisnambiyath.in/api/tasks/${editedTask._id}`,
         editedTask
       );
       onSave(response.data);

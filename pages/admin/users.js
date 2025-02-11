@@ -43,7 +43,7 @@ const handleDelete = async (userId) => {
 
   if (result.isConfirmed) {
     try {
-      await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/admin/users/${userId}`);
+      await axios.delete(`https://tsm.fayisnambiyath.in/api/admin/users/${userId}`);
 
       Swal.fire("Deleted!", "The user has been deleted.", "success");
 
@@ -61,7 +61,7 @@ const handleDelete = async (userId) => {
   // Refresh users after update
   const refreshUsers = async () => {
     try {
-      const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/users`);
+      const response = await axios.get(`https://tsm.fayisnambiyath.in/api/admin/users`);
       setUserList(response.data);
     } catch (error) {
       console.error("Error refreshing users:", error);

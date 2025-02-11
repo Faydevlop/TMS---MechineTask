@@ -14,7 +14,7 @@ const AddTaskModal = ({ isOpen, onClose, onSave, user }) => {
   useEffect(() => {
     if (isOpen && user.role === "admin") {
         axiosInstance
-        .get(`${process.env.NEXT_PUBLIC_API_URL}/admin/users`)
+        .get(`https://tsm.fayisnambiyath.in/api/admin/users`)
         .then((res) => setUsers(res.data))
         .catch((err) => console.error("Error fetching users:", err));
     }

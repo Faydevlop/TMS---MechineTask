@@ -8,7 +8,7 @@
             async(userData,{rejectWithValue})=>{
                 try {
         
-                    const response = await axios.post(`${API_URL}/users/register`, userData);
+                    const response = await axios.post(`https://tsm.fayisnambiyath.in/api/users/register`, userData);
                 
                     
             return response.data; 
@@ -21,7 +21,7 @@
             'auth/login',
             async(userData,{rejectWithValue})=>{
                 try {
-                    const response = await axios.post(`${API_URL}/users/login`, userData);
+                    const response = await axios.post(`https://tsm.fayisnambiyath.in/api/users/login`, userData);
             return response.data; 
                 } catch (error) {
                     return rejectWithValue(error.response.data);
@@ -34,7 +34,7 @@
                 try {
                     console.log(userData);
                     
-                    const response = await axios.post(`${API_URL}/users/verify-otp`, userData);
+                    const response = await axios.post(`https://tsm.fayisnambiyath.in/api/users/verify-otp`, userData);
             return response.data; 
                 } catch (error) {
                     return rejectWithValue(error.response.data);

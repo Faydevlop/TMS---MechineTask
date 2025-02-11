@@ -30,10 +30,10 @@ const Details = ({ user }) => {
           </div>
 
           {/* Assigned Tasks Section */}
-          <div className="bg-background rounded-lg p-6 shadow-sm">
+          {/* <div className="bg-background rounded-lg p-6 shadow-sm">
             <h2 className="text-xl font-bold mb-4">Assigned Tasks</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {/* Task 1 */}
+            
               <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
                 <div className="flex flex-col space-y-1.5 p-6">
                   <h3 className="text-2xl font-semibold">Finish Quarterly Report</h3>
@@ -51,7 +51,7 @@ const Details = ({ user }) => {
                 </div>
               </div>
 
-              {/* Task 2 */}
+            
               <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
                 <div className="flex flex-col space-y-1.5 p-6">
                   <h3 className="text-2xl font-semibold">Redesign Company Website</h3>
@@ -69,7 +69,7 @@ const Details = ({ user }) => {
                 </div>
               </div>
 
-              {/* Task 3 */}
+              
               <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
                 <div className="flex flex-col space-y-1.5 p-6">
                   <h3 className="text-2xl font-semibold">Implement New CRM System</h3>
@@ -87,7 +87,7 @@ const Details = ({ user }) => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>  
     </div>
@@ -99,7 +99,7 @@ export async function getServerSideProps(context) {
   const { userId } = context.params; // Get userId from URL parameters
   
   try {
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/admin/users/${userId}`, {
+    const { data } = await axios.get(`https://tsm.fayisnambiyath.in/api/admin/users/${userId}`, {
       headers: {
         Authorization: `Bearer ${context.req.cookies.token}`, // Ensure auth headers are included if needed
       },
