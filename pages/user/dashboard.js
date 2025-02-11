@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import Sidebar from '@/components/sidebar_user';
 import axiosInstance from '@/components/utils/axiosInstance';
+import withAuth from '@/components/hoc/withAuth';
 
 const Dashboard = () => {
   const userId = useSelector((state) => state.auth?.user?._id);
@@ -22,7 +23,7 @@ const Dashboard = () => {
 
         // Categorizing tasks based on their status
         const total = tasks.length;
-        const completed = tasks.filter(task => task.status === 'completed').length;
+        const completed = tasks.filter(task => task.status === 'Completed').length;
         const inProgress = tasks.filter(task => task.status === 'in-progress').length;
 
         setTaskCounts({ total, completed, inProgress });
@@ -65,4 +66,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default withAuth(Dashboard);
