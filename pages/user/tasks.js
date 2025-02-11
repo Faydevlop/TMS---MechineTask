@@ -96,7 +96,7 @@ const Tasks = () => {
     
 
     fetchTasks();
-  }, [userId]); // Run when userId changes
+  }, [userId,fetchTasks]); // Run when userId changes
 
   const handleEditTask = async (updatedTask) => {
     try {

@@ -19,7 +19,7 @@ const OtpPage = () => {
       router.push("/user/dashboard");
       toast.success("Registeration successfull! ");
     }
-  }, [user, router]);
+  }, [user, router,isAuthenticated]);
 
   // Handle OTP input change
   const handleChange = (index, value) => {
@@ -67,7 +67,7 @@ const OtpPage = () => {
         <div className="text-center space-y-2">
           <h2 className="text-2xl font-bold">Enter OTP</h2>
           <p className="text-gray-600">
-            We've sent a 6-digit OTP to your email. Please enter it below.
+            We&apos;ve sent a 6-digit OTP to your email. Please enter it below.
           </p>
         </div>
 

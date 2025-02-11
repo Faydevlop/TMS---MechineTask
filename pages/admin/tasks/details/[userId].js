@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Sidebar from '@/components/sidebar';
 import withAuth from '@/components/hoc/withAuth';
+import Image from 'next/image';
 
 const Details = ({ user }) => {
   return (
@@ -13,9 +14,11 @@ const Details = ({ user }) => {
           <div className="bg-background rounded-lg p-6 shadow-sm">
             <div className="flex items-center gap-4">
               <span className="relative flex shrink-0 overflow-hidden rounded-full h-12 w-12">
-                <img
+                <Image
                   className="aspect-square h-full w-full"
                   alt="User Avatar"
+                  width={1260}  // Set appropriate width
+                  height={750}
                   src={user?.profilePicture || "https://tailwindui.com/placeholder-user.jpg"}
                 />
               </span>

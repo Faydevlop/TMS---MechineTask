@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from '@/components/sidebar'
 import withAuth from '@/components/hoc/withAuth'
 import axios from 'axios';
+import Link from 'next/link';
 
 const dashboard = ({data}) => {
     console.log(data);
@@ -31,10 +32,9 @@ const dashboard = ({data}) => {
           </svg>
           <span className="sr-only">Toggle Menu</span>
         </button>
-        <a className="flex items-center gap-2" href="/">
-         
-          <span className="font-semibold text-lg">Admin Dashboard</span>
-        </a>
+        <Link href="/admin/dashboard" className="flex items-center gap-2">
+  <span className="font-semibold text-lg">Admin Dashboard</span>
+</Link>
       </div>
       <div className="flex items-center gap-4"></div>
     </header>

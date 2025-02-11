@@ -4,6 +4,7 @@ import { loginUser } from "@/redux/slices/authSlice";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import Image from 'next/image';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -47,9 +48,11 @@ const Login = () => {
       <div className="mx-4 flex w-full max-w-4xl flex-col lg:flex-row shadow-md rounded-xl bg-white">
         {/* Left Section */}
         <div className="hidden lg:flex flex-1 items-center justify-center bg-gray-100 p-8 rounded-l-xl">
-  <img 
+  <Image 
     src="https://images.pexels.com/photos/4050287/pexels-photo-4050287.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
     alt="Login" 
+    width={1260}  // Set appropriate width
+    height={750}
     className="w-full h-full object-cover rounded-l-xl"
   />
 </div>
@@ -107,7 +110,7 @@ const Login = () => {
           </form>
 
           <p className="text-sm text-gray-600">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <Link href="/auth/signup" className="underline text-blue-600">
               Register
             </Link>

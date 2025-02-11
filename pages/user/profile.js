@@ -1,6 +1,7 @@
 import withAuth from '@/components/hoc/withAuth';
 import Sidebar from '@/components/sidebar_user';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -22,7 +23,10 @@ const Profile = () => {
       <div className="w-full max-w-md mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <span className="relative flex shrink-0 overflow-hidden rounded-full mb-4 h-24 w-24">
-            <img className="aspect-square h-full w-full" alt="User Avatar" src={user.avatar} />
+            <Image className="aspect-square h-full w-full" alt="User Avatar"
+             width={1260}  // Set appropriate width
+             height={750}
+            src={user.avatar} />
           </span>
           <div className="space-y-2 text-center">
             <h2 className="text-2xl font-bold">{user.name}</h2>
