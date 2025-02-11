@@ -23,9 +23,8 @@ const Profile = () => {
       <div className="w-full max-w-md mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <span className="relative flex shrink-0 overflow-hidden rounded-full mb-4 h-24 w-24">
-            <Image className="aspect-square h-full w-full" alt="User Avatar"
-             width={1260}  // Set appropriate width
-             height={750}
+            <img className="aspect-square h-full w-full" alt="User Avatar"
+             
             src={user.avatar} />
           </span>
           <div className="space-y-2 text-center">
