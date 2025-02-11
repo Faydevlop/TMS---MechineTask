@@ -25,7 +25,7 @@ const Profile = () => {
           <span className="relative flex shrink-0 overflow-hidden rounded-full mb-4 h-24 w-24">
             <img className="aspect-square h-full w-full" alt="User Avatar"
              
-            src={user.avatar} />
+            src='https://img.freepik.com/premium-vector/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-vector-illustration_561158-3383.jpg?semt=ais_hybrid' />
           </span>
           <div className="space-y-2 text-center">
             <h2 className="text-2xl font-bold">{user.name}</h2>
